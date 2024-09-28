@@ -26,6 +26,24 @@ plt.ylabel('Total Price')
 plt.title('Ev Fiyatlarının Stories ile İlişkisi')
 plt.show()
 
+avg_price_by_bathrooms = df.groupby('bathrooms')['price'].mean()
+
+plt.figure()
+avg_price_by_bathrooms.plot(kind='bar', color='purple')
+plt.title('Banyo Ortalama Fiyatı')
+plt.xlabel('Number of Bathrooms')
+plt.ylabel('Average Price')
+plt.show()
+
+avg_price_by_furnishing = df.groupby('furnishingstatus')['price'].mean()
+
+plt.figure()
+avg_price_by_furnishing.plot(kind='bar', color='orange')
+plt.title('Mobilya Durumuna Göre Ortalama Fiyat')
+plt.xlabel('Furnishing Status')
+plt.ylabel('Average Price')
+plt.show()
+
 
 
 
